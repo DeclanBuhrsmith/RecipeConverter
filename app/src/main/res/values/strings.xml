@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">RecipeConverter</string>
+    <string-array name ="conversions_array">
+        <item>Cup</item>
+        <item>3/4 Cup</item>
+        <item>2/3 Cup</item>
+        <item>1/2 Cup</item>
+        <item>1/4 Cup</item>
+    </string-array>
+    <string-array name ="tabletea">
+        <item>Tablespoon</item>
+        <item>3/4 Tablespoon</item>
+        <item>2/3 Tablespoon</item>
+        <item>1/2 Tablespoon</item>
+        <item>1/4 Tablespoon</item>
+        <item>Teaspoon</item>
+        <item>3/4 Teaspoon</item>
+        <item>2/3 Teaspoon</item>
+        <item>1/2 Teaspoon</item>
+        <item>1/4 Teaspoon</item>
+    </string-array>
+    <string name="startValue">
+        Select Conversion
+    </string>
+    <string name="conversionDefault">
+        No Conversion Selected
+    </string>
+</resources>
