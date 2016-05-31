@@ -15,6 +15,8 @@
         import android.widget.EditText;
         import android.widget.Spinner;
         import android.widget.TextView;
+        import android.widget.RadioButton;
+        import android.widget.RadioGroup;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +30,10 @@ public class MainActivity extends AppCompatActivity {
     double conversionRate = 1;
     double amount = 1;
     double convertedAmount = 1;
+    private RadioGroup group;
+    private RadioButton b1,b2,b3,b4,b5;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,R.array.conversions_array,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner2.setAdapter(adapter2);
+
+
+
 
         mText = (TextView)findViewById(R.id.convertedNum);
 
@@ -91,6 +100,11 @@ public class MainActivity extends AppCompatActivity {
                 updateConversion();
             }
         });
+            public void onClickListener(){
+        group = (RadioGroup)findViewById(R.id.radioGroup);
+
+
+    }
     }
     public void updateConversion(){
         conversionRate = convertAmount(cUnit,cUnit2,cRate);
@@ -127,68 +141,83 @@ public class MainActivity extends AppCompatActivity {
     public String setConversions(int position){
         String cU ="";
         switch (position) {
+            //cup to cup
             case 0:
                 cU = "Cups";
                 cRate = 1;
                 break;
+            //cup to 3/4cup
             case 1:
                 cU = "Cups";
-                cRate = (3.0/4.0);
+                cRate = (4.0/3.0);
                 break;
+            //cup to 2/3 cup
             case 2:
                 cU = "Cups";
-                cRate = (2.0/3.0);
+                cRate = (3.0/2.0);
                 break;
+            //cup to 1/2cup
             case 3:
                 cU = "Cups";
-                cRate = (1.0/2.0);
+                cRate = (2.0/1.0);
                 break;
+            //cup to 1/4cup
             case 4:
                 cU = "Cups";
-                cRate = (1.0/4.0);
+                cRate = (4.0/1.0);
                 break;
 
-            //Table Spoons
+            //TableSpoons
+            //tablespoon to tablespoon
             case 5:
                 cU = "TableSpoons";
                 cRate = 1;
                 break;
+            //tablespoon to 3/4tablespoon
             case 6:
                 cU = "TableSpoons";
-                cRate = (3.0/4.0);
+                cRate = (4.0/3.0);
                 break;
+            //tablespoon to 2/3 tablespoon
             case 7:
                 cU = "TableSpoons";
-                cRate = (2.0/3.0);
+                cRate = (3.0/2.0);
                 break;
+            //tablespoon to 1/2tablespoon
             case 8:
                 cU = "TableSpoons";
-                cRate = (1.0/2.0);
+                cRate = (2.0/1.0);
                 break;
+            //tablespoon to 1/4tablespoon
             case 9:
                 cU = "TableSpoons";
-                cRate = (1.0/4.0);
+                cRate = (4.0/1.0);
                 break;
             //Teaspoons!
+            //teaspoon to teaspoon
             case 10:
                 cU = "Teaspoons";
                 cRate = 1;
                 break;
+            //teaspoon to 3/4teaspoon
             case 11:
                 cU = "Teaspoons";
-                cRate = (3.0/4.0);
+                cRate = (4.0/3.0);
                 break;
+            //teaspoon to 2/3 teaspoon
             case 12:
                 cU = "Teaspoons";
-                cRate = (2.0/3.0);
+                cRate = (3.0/2.0);
                 break;
+            //teaspoon to 1/2teaspoon
             case 13:
                 cU = "Teaspoons";
-                cRate = (1.0/2.0);
+                cRate = (2.0/1.0);
                 break;
+            //teaspoon to 1/4teaspoon
             case 14:
                 cU = "Teaspoons";
-                cRate = (1.0/4.0);
+                cRate = (4.0/1.0);
                 break;
 
 
