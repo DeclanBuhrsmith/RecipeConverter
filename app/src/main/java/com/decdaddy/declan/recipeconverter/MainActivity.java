@@ -100,12 +100,10 @@ public class MainActivity extends AppCompatActivity {
                 updateConversion();
             }
         });
-            public void onClickListener(){
-        group = (RadioGroup)findViewById(R.id.radioGroup);
 
 
     }
-    }
+
     public void updateConversion(){
         conversionRate = convertAmount(cUnit,cUnit2,cRate);
         convertedAmount = amount * conversionRate;
