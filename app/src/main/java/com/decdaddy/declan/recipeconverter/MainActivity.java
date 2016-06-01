@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     double convertedAmount = 1;
     private RadioGroup group;
     private RadioButton b1,b2,b3,b4,b5;
+    int postion;
 
 
     @Override
@@ -49,7 +50,35 @@ public class MainActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner2.setAdapter(adapter2);
 
+//        RadioGroup rg = (RadioGroup) findViewById(R.id.radioGroup);
+//        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+//            public void onCheckedChanged(RadioGroup group, int checkedId) {
+//                switch (checkedId) {
+//                    case R.id.radioButton:
+//                        //
+//                        break;
+//                    case R.id.radioButton2:
+//                        // TODO Something
+//                        break;
+//                    case R.id.radioButton3:
+//                        // TODO Something
+//                        break;
+//                    case R.id.radioButton4:
+//                        // TODO Something
+//                        break;
+//                    case R.id.radioButton5:
+//                        // TODO Something
+//                        break;
+//                }
+//            }
+//        });
 
+
+//        b1 = (RadioButton) findViewById(R.id.radioButton);
+//        b2 = (RadioButton) findViewById(R.id.radioButton2);
+//        b3 = (RadioButton) findViewById(R.id.radioButton3);
+//        b4 = (RadioButton) findViewById(R.id.radioButton4);
+//        b5 = (RadioButton) findViewById(R.id.radioButton5);
 
 
         mText = (TextView)findViewById(R.id.convertedNum);
@@ -102,6 +131,69 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
+
+    }
+
+    public void selectOne(View view){
+        boolean checked = ((RadioButton) view).isChecked();
+        switch (view.getId())
+        {
+            case R.id.radioButton:
+                if(checked)
+                    postion = 0;
+                break;
+            case R.id.radioButton2:
+                if(checked)
+                    postion = 1;
+                break;
+            case R.id.radioButton3:
+                if(checked)
+                    postion = 2;
+                    break;
+            case R.id.radioButton4:
+                if(checked)
+                    postion = 3;
+                    break;
+            case R.id.radioButton5:
+                if(checked)
+                    postion = 4;
+                    break;
+            case R.id.radioButton6:
+                if(checked)
+                    postion = 5;
+                    break;
+        }
+    }
+    public void selectTwo(View view){
+        boolean checked = ((RadioButton) view).isChecked();
+        switch (view.getId())
+        {
+            case R.id.radioButton7:
+                if(checked)
+                    //TODO
+                    break;
+            case R.id.radioButton8:
+                if(checked)
+                    //TODO
+                    break;
+            case R.id.radioButton9:
+                if(checked)
+                    //TODO
+                    break;
+            case R.id.radioButton10:
+                if(checked)
+                    //TODO
+                    break;
+            case R.id.radioButton11:
+                if(checked)
+                    //TODO
+                    break;
+            case R.id.radioButton12:
+                if(checked)
+                    //TODO
+                    break;
+        }
     }
 
     public void updateConversion(){
@@ -136,9 +228,11 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-    public String setConversions(int position){
+
+    public String setConversions(int pos){
         String cU ="";
-        switch (position) {
+        pos = postion;
+        switch (pos) {
             //cup to cup
             case 0:
                 cU = "Cups";
@@ -159,61 +253,66 @@ public class MainActivity extends AppCompatActivity {
                 cU = "Cups";
                 cRate = (2.0/1.0);
                 break;
-            //cup to 1/4cup
+            //cup to 1/3 cup
             case 4:
+                cU = "Cups";
+                cRate = (3.0/1.0);
+                break;
+            //cup to 1/4 cup
+            case 5:
                 cU = "Cups";
                 cRate = (4.0/1.0);
                 break;
 
             //TableSpoons
             //tablespoon to tablespoon
-            case 5:
+            case 6:
                 cU = "TableSpoons";
                 cRate = 1;
                 break;
             //tablespoon to 3/4tablespoon
-            case 6:
+            case 7:
                 cU = "TableSpoons";
                 cRate = (4.0/3.0);
                 break;
             //tablespoon to 2/3 tablespoon
-            case 7:
+            case 8:
                 cU = "TableSpoons";
                 cRate = (3.0/2.0);
                 break;
             //tablespoon to 1/2tablespoon
-            case 8:
+            case 9:
                 cU = "TableSpoons";
                 cRate = (2.0/1.0);
                 break;
             //tablespoon to 1/4tablespoon
-            case 9:
+            case 10:
                 cU = "TableSpoons";
                 cRate = (4.0/1.0);
                 break;
             //Teaspoons!
             //teaspoon to teaspoon
-            case 10:
+            case 11:
                 cU = "Teaspoons";
                 cRate = 1;
                 break;
             //teaspoon to 3/4teaspoon
-            case 11:
+            case 12:
                 cU = "Teaspoons";
                 cRate = (4.0/3.0);
                 break;
             //teaspoon to 2/3 teaspoon
-            case 12:
+            case 13:
                 cU = "Teaspoons";
                 cRate = (3.0/2.0);
                 break;
             //teaspoon to 1/2teaspoon
-            case 13:
+            case 14:
                 cU = "Teaspoons";
                 cRate = (2.0/1.0);
                 break;
             //teaspoon to 1/4teaspoon
-            case 14:
+            case 15:
                 cU = "Teaspoons";
                 cRate = (4.0/1.0);
                 break;
