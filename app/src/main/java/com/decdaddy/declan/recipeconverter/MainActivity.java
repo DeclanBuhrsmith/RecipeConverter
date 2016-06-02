@@ -188,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public double convertAmount(double rate) {
         //cups to other units
-        if (name1.equalsIgnoreCase("")) {
+        if (name1.equalsIgnoreCase("Cup(s)")) {
             if (name2.equalsIgnoreCase("Tablespoon(s)")) {
                 return (rate / 16.0);
             } else if (name2.equalsIgnoreCase("Teaspoon(s)")) {
@@ -207,11 +207,11 @@ public class MainActivity extends AppCompatActivity {
             }
         } else {
             //teaspoons to other units
-            if(name1.equalsIgnoreCase("Teaspoon(s)") && name2.equalsIgnoreCase(""))
+            if(name1.equalsIgnoreCase("Teaspoon(s)") && name2.equalsIgnoreCase("Cup(s)"))
                 return (.0280333 / rate);
             if (name2.equalsIgnoreCase("Tablespoon(s)")) {
                 return (.333333 / rate);
-            } else if (name2.equalsIgnoreCase("")) {
+            } else if (name2.equalsIgnoreCase("Cup(s)")) {
                 return (.0208333 / rate);
             } else {
                 return rate;
