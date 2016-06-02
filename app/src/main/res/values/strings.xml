@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name">RecipeConverter</string>
     <string-array name ="conversions_array">
-        <item>Cup(s)</item>
-        <item>Tablespoon(s)</item>
-        <item>Teaspoon(s)</item>
+        <item>1</item>
+        <item>3/4th</item>
+        <item>2/3rd</item>
+        <item>1/2th</item>
+        <item>1/3rd</item>
+        <item>1/4th</item>
 
     </string-array>
 
