@@ -182,126 +182,133 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void updateConversion(){
-        conversionRate = convertAmount(cUnit,cUnit2,cRate);
+        conversionRate = convertAmount(cRate);
         convertedAmount = amount * conversionRate;
         mText.setText(amount + " " + cUnit + " " + name1 + " is " + convertedAmount + " " + cUnit2 + " " + name2);
     }
-    public double convertAmount(String convertFrom, String convertTo, double rate) {
-        if (convertFrom.equalsIgnoreCase("Cups")) {
-            if (convertTo.equalsIgnoreCase("TableSpoons")) {
-                return (16.0 / rate);
-            } else if (convertTo.equalsIgnoreCase("TeaSpoons")) {
+    public double convertAmount(double rate) {
+        //cups to other units
+        if (name1.equalsIgnoreCase("")) {
+            if (name2.equalsIgnoreCase("Tablespoon(s)")) {
+                return (rate / 16.0);
+            } else if (name2.equalsIgnoreCase("Teaspoon(s)")) {
                 return (48.0 / rate);
             } else {
                 return rate;
             }
-        } else if (convertFrom.equalsIgnoreCase("TableSpoons")) {
-            if (convertTo.equalsIgnoreCase("Cups")) {
+            //tablespoons to other units
+        } else if (name1.equalsIgnoreCase("Tablespoon(s)")) {
+            if (name2.equalsIgnoreCase("Cup(s)")) {
                 return (.0625 / rate);
-            } else if (convertTo.equalsIgnoreCase("TeaSpoons")) {
+            } else if (name2.equalsIgnoreCase("Teaspoon(s)")) {
                 return (3.0 / rate);
             } else {
                 return rate;
             }
         } else {
-            if (convertTo.equalsIgnoreCase("TableSpoons")) {
+            //teaspoons to other units
+            if(name1.equalsIgnoreCase("Teaspoon(s)") && name2.equalsIgnoreCase(""))
+                return (.0280333 / rate);
+            if (name2.equalsIgnoreCase("Tablespoon(s)")) {
                 return (.333333 / rate);
-            } else if (convertTo.equalsIgnoreCase("Cups")) {
+            } else if (name2.equalsIgnoreCase("")) {
                 return (.0208333 / rate);
             } else {
                 return rate;
             }
         }
-    }
+//        if(name1.equalsIgnoreCase("Cup(s)")){
+//            if(name2.equalsIgnoreCase("Tablespoon(s)")){
+//                return 16.0 * rate;
+//            }
+        }
 
-    public String setConversions(int pos){
-        String cU ="";
+    public void setConversions(int pos){
         pos = postion;
         switch (pos) {
             //cup to cup
             case 0:
-                if(cUnit.equalsIgnoreCase("1")){
+                if (cUnit.equalsIgnoreCase("1")) {
                     cUnit = "";
                     cRate = 1;
                 }
-                if(cUnit.equalsIgnoreCase("3/4th")){
+                if (cUnit.equalsIgnoreCase("3/4th")) {
                     cUnit = "3/4th";
-                    cRate = (4.0/3.0);
+                    cRate = (3.0 / 4.0);
                 }
-                if(cUnit.equalsIgnoreCase("2/3rd")){
+                if (cUnit.equalsIgnoreCase("2/3rd")) {
                     cUnit = "2/3rd";
-                    cRate = (3.0/2.0);
+                    cRate = (2.0 / 3.0);
                 }
-                if(cUnit.equalsIgnoreCase("1/2th")){
+                if (cUnit.equalsIgnoreCase("1/2th")) {
                     cUnit = "1/2th";
-                    cRate = (2.0/1.0);
+                    cRate = (1.0 / 2.0);
                 }
-                if(cUnit.equalsIgnoreCase("1/3rd")){
+                if (cUnit.equalsIgnoreCase("1/3rd")) {
                     cUnit = "1/3rd";
-                    cRate = (3.0/1.0);
+                    cRate = (1.0 / 3.0);
                 }
-                if(cUnit.equalsIgnoreCase("1/4th")){
+                if (cUnit.equalsIgnoreCase("1/4th")) {
                     cUnit = "1/4th";
-                    cRate = (4.0/1.0);
+                    cRate = (1.0 / 4.0);
                 }
-
                 break;
             //cup to 3/4cup
             case 1:
-                if(cUnit.equalsIgnoreCase("1")){
+                if (cUnit.equalsIgnoreCase("1")) {
                     cUnit = "";
                     cRate = 1;
                 }
-                if(cUnit.equalsIgnoreCase("3/4th")){
+                if (cUnit.equalsIgnoreCase("3/4th")) {
                     cUnit = "3/4th";
-                    cRate = (4.0/3.0);
+                    cRate = (3.0 / 4.0);
                 }
-                if(cUnit.equalsIgnoreCase("2/3rd")){
+                if (cUnit.equalsIgnoreCase("2/3rd")) {
                     cUnit = "2/3rd";
-                    cRate = (3.0/2.0);
+                    cRate = (2.0 / 3.0);
                 }
-                if(cUnit.equalsIgnoreCase("1/2th")){
+                if (cUnit.equalsIgnoreCase("1/2th")) {
                     cUnit = "1/2th";
-                    cRate = (2.0/1.0);
+                    cRate = (1.0 / 2.0);
                 }
-                if(cUnit.equalsIgnoreCase("1/3rd")){
+                if (cUnit.equalsIgnoreCase("1/3rd")) {
                     cUnit = "1/3rd";
-                    cRate = (3.0/1.0);
+                    cRate = (1.0 / 3.0);
                 }
-                if(cUnit.equalsIgnoreCase("1/4th")) {
+                if (cUnit.equalsIgnoreCase("1/4th")) {
                     cUnit = "1/4th";
-                    cRate = (4.0 / 1.0);
+                    cRate = (1.0 / 4.0);
                 }
                 break;
             //cup to 2/3 cup
             case 2:
-                if(cUnit.equalsIgnoreCase("1")){
+                if (cUnit.equalsIgnoreCase("1")) {
                     cUnit = "";
                     cRate = 1;
                 }
-                if(cUnit.equalsIgnoreCase("3/4th")){
+                if (cUnit.equalsIgnoreCase("3/4th")) {
                     cUnit = "3/4th";
-                    cRate = (4.0/3.0);
+                    cRate = (3.0 / 4.0);
                 }
-                if(cUnit.equalsIgnoreCase("2/3rd")){
+                if (cUnit.equalsIgnoreCase("2/3rd")) {
                     cUnit = "2/3rd";
-                    cRate = (3.0/2.0);
+                    cRate = (2.0 / 3.0);
                 }
-                if(cUnit.equalsIgnoreCase("1/2th")){
+                if (cUnit.equalsIgnoreCase("1/2th")) {
                     cUnit = "1/2th";
-                    cRate = (2.0/1.0);
+                    cRate = (1.0 / 2.0);
                 }
-                if(cUnit.equalsIgnoreCase("1/3rd")){
+                if (cUnit.equalsIgnoreCase("1/3rd")) {
                     cUnit = "1/3rd";
-                    cRate = (3.0/1.0);
+                    cRate = (1.0 / 3.0);
                 }
-                if(cUnit.equalsIgnoreCase("1/4th")) {
+                if (cUnit.equalsIgnoreCase("1/4th")) {
                     cUnit = "1/4th";
-                    cRate = (4.0 / 1.0);
+                    cRate = (1.0 / 4.0);
                 }
                 break;
         }
-        return  cU;
+        convertAmount(cRate);
     }
 }
 
