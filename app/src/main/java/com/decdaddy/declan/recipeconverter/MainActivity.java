@@ -248,11 +248,57 @@ public class MainActivity extends AppCompatActivity {
                 break;
             //cup to 3/4cup
             case 1:
-                cRate = (4.0/3.0);
+                if(cUnit.equalsIgnoreCase("1")){
+                    cUnit = "";
+                    cRate = 1;
+                }
+                if(cUnit.equalsIgnoreCase("3/4th")){
+                    cUnit = "3/4th";
+                    cRate = (4.0/3.0);
+                }
+                if(cUnit.equalsIgnoreCase("2/3rd")){
+                    cUnit = "2/3rd";
+                    cRate = (3.0/2.0);
+                }
+                if(cUnit.equalsIgnoreCase("1/2th")){
+                    cUnit = "1/2th";
+                    cRate = (2.0/1.0);
+                }
+                if(cUnit.equalsIgnoreCase("1/3rd")){
+                    cUnit = "1/3rd";
+                    cRate = (3.0/1.0);
+                }
+                if(cUnit.equalsIgnoreCase("1/4th")) {
+                    cUnit = "1/4th";
+                    cRate = (4.0 / 1.0);
+                }
                 break;
             //cup to 2/3 cup
             case 2:
-                cRate = (3.0/2.0);
+                if(cUnit.equalsIgnoreCase("1")){
+                    cUnit = "";
+                    cRate = 1;
+                }
+                if(cUnit.equalsIgnoreCase("3/4th")){
+                    cUnit = "3/4th";
+                    cRate = (4.0/3.0);
+                }
+                if(cUnit.equalsIgnoreCase("2/3rd")){
+                    cUnit = "2/3rd";
+                    cRate = (3.0/2.0);
+                }
+                if(cUnit.equalsIgnoreCase("1/2th")){
+                    cUnit = "1/2th";
+                    cRate = (2.0/1.0);
+                }
+                if(cUnit.equalsIgnoreCase("1/3rd")){
+                    cUnit = "1/3rd";
+                    cRate = (3.0/1.0);
+                }
+                if(cUnit.equalsIgnoreCase("1/4th")) {
+                    cUnit = "1/4th";
+                    cRate = (4.0 / 1.0);
+                }
                 break;
         }
         return  cU;
