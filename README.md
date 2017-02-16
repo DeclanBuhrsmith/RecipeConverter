@@ -1,4 +1,3 @@
 # RecipeConverter
-Alex and Declan's Alpha Android Project
-KappaPride
+Declan's proof of concept app to see if I could do this.
 
